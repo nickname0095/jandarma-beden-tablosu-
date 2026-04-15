@@ -283,11 +283,11 @@ function maleShirt(boy, kilo, vucut){
   if (ref) return ref;
 
   let size;
-  if (kilo < 72) size = "M";
-  else if (kilo < 82) size = "M";
-  else if (kilo < 90) size = "L";
-  else if (kilo < 100) size = "XL";
-  else size = "XXL";
+if (kilo < 65) size = "S";
+else if (kilo < 75) size = "M";
+else if (kilo < 85) size = "L";
+else if (kilo < 95) size = "XL";
+else size = "XXL";
 
   // özel düzeltme: kısa ve kilolu erkekte gömlek fazla büyümesin
   if (boy < 175 && kilo >= 88) size = "M";
