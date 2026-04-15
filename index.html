@@ -169,15 +169,10 @@ button{border:none;border-radius:14px;padding:14px;font-size:15px;font-weight:bo
 <script>
 const refs = [
   { cinsiyet:"erkek", boy:190, kilo:80, vucut:"hayir", mont:"52-E", yelek:"52-E", pardosu:"52-E", pantolon:"51-11A", elbise:"51-11A" },
-  { cinsiyet:"erkek", boy:177, kilo:84, vucut:"hayir", mont:"54-C", yelek:"54-C", pardosu:"54-C", gomlek:"L-B", pantolon:"53-7", elbise:"53-7" },
+  { cinsiyet:"erkek", boy:177, kilo:84, vucut:"hayir", mont:"54-C", yelek:"54-C", pardosu:"54-C", pantolon:"53-7", elbise:"53-7" },
   { cinsiyet:"erkek", boy:172, kilo:93, vucut:"evet", mont:"54-B", yelek:"54-B", pardosu:"54-B", pantolon:"54-6 / 55-7", elbise:"54-6A" },
   { cinsiyet:"erkek", boy:180, kilo:93, vucut:"hayir", mont:"56-D", yelek:"56-D", pardosu:"56-D" },
   { cinsiyet:"erkek", boy:182, kilo:88, vucut:"hayir", pantolon:"54-6", elbise:"54-6", gomlek:"L-B" },
-  { cinsiyet:"erkek", boy:175, kilo:75, vucut:"hayir", gomlek:"M-B" },
-  { cinsiyet:"erkek", boy:168, kilo:67, vucut:"hayir", gomlek:"M-A" },
-  { cinsiyet:"erkek", boy:190, kilo:82, vucut:"hayir", gomlek:"L-C" },
-  { cinsiyet:"erkek", boy:190, kilo:90, vucut:"hayir", gomlek:"XL-C" },
-  { cinsiyet:"erkek", boy:190, kilo:95, vucut:"hayir", gomlek:"XXL-C" },
   { cinsiyet:"kadin", boy:172, kilo:58, vucut:"hayir", mont:"42-B", yelek:"42-B", pardosu:"42-B", pantolon:"42-2", elbise:"42-2", gomlek:"M-B" }
 ];
 
@@ -279,8 +274,29 @@ function femaleUpperBase(kilo){
 }
 
 function maleShirt(boy, kilo, vucut){
-  const ref = findRef("erkek", boy, kilo, vucut, "gomlek");
-  if (ref) return ref;
+  let size;
+
+  if (kilo < 63) size = "XS";
+  else if (kilo < 67) size = "S";
+  else if (kilo < 78) size = "M";
+  else if (kilo < 88) size = "L";
+  else if (kilo < 98) size = "XL";
+  else if (kilo < 120) size = "XXL";
+  else size = "XXXL";
+
+  let tip;
+  if (boy < 173) tip = "A";
+  else if (boy < 184) tip = "B";
+  else tip = "C";
+
+  const order = ["XS","S","M","L","XL","XXL","XXXL"];
+  if (vucut === "evet") {
+    const i = order.indexOf(size);
+    if (i !== -1 && i < order.length - 1) size = order[i + 1];
+  }
+
+  return `${size}-${tip}`;
+}
 
   let size;
 if (kilo < 63) size = "XS";
@@ -289,9 +305,6 @@ else if (kilo < 78) size = "M";
 else if (kilo < 88) size = "L";
 else if (kilo < 98) size = "XL";
 else size = "XXL";
-
-  // özel düzeltme: kısa ve kilolu erkekte gömlek fazla büyümesin
-  if (boy < 175 && kilo >= 88) size = "M";
 
   let tip;
   if (boy < 173) tip = "A";
