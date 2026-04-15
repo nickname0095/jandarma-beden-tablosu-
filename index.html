@@ -91,9 +91,10 @@ button{border:none;border-radius:14px;padding:14px;font-size:15px;font-weight:bo
     <h1>Hizmet Giyeceği Beden Tahmin Sistemi</h1>
     <p>Boy, kilo, cinsiyet ve göbek/basen durumuna göre mont, yelek, pardösü, pantolon, elbise ve gömlek için ön beden önerisi verir.</p>
     <div class="stats">
-      <div class="stat"><small>Üst Giyim</small><strong>Mont • Yelek • Pardösü</strong></div>
-      <div class="stat"><small>Alt Giyim</small><strong>Pantolon • Elbise</strong></div>
+      <div class="stat"><small>Kalıbı</small><strong>📏 46-48-50-...-58-60-62 kalıb örnekleridir</strong></div>
+      <div class="stat"><small>Uzunluk</small><strong>📐4-5-6-78-9-10-11-A-B-C-D-E uzunluk örnekleridir.</strong></div>
       <div class="stat"><small>Ek Kural</small><strong>Göbek/Basen = 1 üst beden</strong></div>
+       <div class="stat"><small>Şapka Ölçüsü</small><strong>🧢Kulak üstünden kafa çevresi ölçülerek belirlenir.Çıkan cm şapka ölçünüzdür.</strong></div>
     </div>
   </section>
 
@@ -134,12 +135,6 @@ button{border:none;border-radius:14px;padding:14px;font-size:15px;font-weight:bo
         <button class="secondary" onclick="temizle()">Temizle</button>
       </div>
 
-      <div class="hint">
-        Alt giyimde pantolon ve elbise aynı beden mantığıyla çalışır. Boy sistemi:
-        170 altı kısa, 170-180 normal, 180-187 uzun, 187 üstü A.
-      </div>
-    </aside>
-
     <section class="panel results-panel">
       <h2>Önerilen Bedenler</h2>
 
@@ -148,20 +143,6 @@ button{border:none;border-radius:14px;padding:14px;font-size:15px;font-weight:bo
         <p id="kisiBilgisi">Önce bilgileri girip bedenleri göster butonuna basın.</p>
       </div>
       <div class="info-box">
-  <div class="info-title">Beden Sistemi</div>
-  <p style="line-height:1.8;">
-    📏 46-48-50-...-60-62 → Kalıp<br>
-    📐 4-5-6-7-9-11 → Uzunluk (pantolon/elbise)<br>
-    🧥 A-B-C-D-E → Üst giyim uzunluğu<br><br>
-    ⚠️ Sistemde yoksa yakın bedenine bakınız
-  </p>
-</div>
-<div class="info-box">
-  <div class="info-title">Şapka Ölçüsü</div>
-  <p>
-    🧢 Kulak üstünden kafa çevresi ölçülerek belirlenir.
-  </p>
-</div>
 
       <div id="placeholder" class="placeholder">
         Sonuç kartları, bilgiler girildikten sonra burada açılır.
