@@ -254,6 +254,9 @@ function maleUpperBase(kilo, boy){
   else if (kilo < 100) b = 54;
   else if (kilo < 110) b = 56;
   else b = 58;
+  // iri ve uzun adam düzeltmesi
+if (kilo >= 110 && boy >= 188) b += 2;
+if (kilo >= 115 && boy >= 190) b += 2;
 
   return Math.min(62, b);
 }
@@ -281,7 +284,7 @@ function maleShirt(boy, kilo, vucut){
   else if (kilo < 78) size = "M";
   else if (kilo < 88) size = "L";
   else if (kilo < 98) size = "XL";
-  else if (kilo < 120) size = "XXL";
+  else if (kilo < 140) size = "XXL";
   else size = "XXXL";
 
   let tip;
