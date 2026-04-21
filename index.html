@@ -210,7 +210,7 @@ function maleLowerDrop(base, boy, vucut){
   if (boy < 172) return base % 2 === 0 ? "4" : "5";
   else if (boy < 184) return base % 2 === 0 ? "6" : "7";
   else if (boy < 188) return base % 2 === 0 ? "8" : "9";
-  else return base % 2 === 0 ? "10" : "11";
+  else return base % 2 === 0 ? "11A";
 }
 
 function femaleLowerDrop(boy){
@@ -222,13 +222,21 @@ function femaleLowerDrop(boy){
 }
 
 function maleLowerBase(kilo){
+  if (kilo < 62) return 46;
   if (kilo < 66) return 47;
-  if (kilo < 72) return 49;
-  if (kilo < 79) return 51;
+  if (kilo < 70) return 48;
+  if (kilo < 74) return 49;
+  if (kilo < 77) return 50;
+  if (kilo < 80) return 51;
+  if (kilo < 83) return 52;
   if (kilo < 87) return 53;
-  if (kilo < 95) return 55;
-  if (kilo < 103) return 57;
-  if (kilo < 111) return 59;
+  if (kilo < 90) return 54;
+  if (kilo < 94) return 55;
+  if (kilo < 97) return 56;
+  if (kilo < 101) return 57;
+  if (kilo < 106) return 58;
+  if (kilo < 110) return 59;
+  if (kilo < 115) return 60;
   return 61;
 }
 
