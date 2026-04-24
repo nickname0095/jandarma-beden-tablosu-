@@ -597,7 +597,13 @@
 
       let lowerEven = (lower % 2 === 0) ? lower : lower + 1;
 
-      if (base < lowerEven) base = lowerEven;
+      // alt beden referans
+      let lowerEven = (lower % 2 === 0) ? lower : lower + 1;
+
+      // 🔥 sadece çok küçükse yükselt
+      if (base < lowerEven - 2) {
+      base = lowerEven - 2;
+      }
 
       if (vucut === "evet") {
         base = nextEven(base);
