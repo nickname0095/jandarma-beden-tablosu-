@@ -586,32 +586,32 @@
       return { pantolon: val, elbise: val };
     }
 
-    function maleUpper(boy, kilo, vucut, alan){
-      const ref = findRef("erkek", boy, kilo, vucut, alan);
-      if (ref) return ref;
+     function maleUpper(boy, kilo, vucut, alan){
+     const ref = findRef("erkek", boy, kilo, vucut, alan);
+     if (ref) return ref;
 
-      let base = maleUpperBase(kilo, boy);
+     let base = maleUpperBase(kilo, boy);
 
-      let lower = maleLowerBase(kilo);
-      if (vucut === "evet") lower = nextOdd(lower);
+    let lower = maleLowerBase(kilo);
+     if (vucut === "evet") lower = nextOdd(lower);
 
       let lowerEven = (lower % 2 === 0) ? lower : lower + 1;
 
-      // alt beden referans
-      let lowerEven = (lower % 2 === 0) ? lower : lower + 1;
-
-      // 🔥 sadece çok küçükse yükselt
-      if (base < lowerEven - 2) {
+     if (base < lowerEven - 2) {
       base = lowerEven - 2;
-      }
+     }
 
-      if (vucut === "evet") {
-        base = nextEven(base);
-      }
+    if (base > lowerEven + 2) {
+    base = lowerEven + 2;
+    }
 
-      if (base % 2 !== 0) base = base + 1;
+    if (vucut === "evet") {
+    base = nextEven(base);
+    }
 
-      return `${base}-${maleUpperLetter(boy)}`;
+    if (base % 2 !== 0) base = base + 1;
+
+    return `${base}-${maleUpperLetter(boy)}`;
     }
 
     function femaleUpper(boy, kilo, vucut, alan){
@@ -683,23 +683,5 @@
       document.getElementById("uyari").textContent = "Bu ekran ön öneri verir. Kesin beden teslim sırasında netleşir.";
     }
   </script>
-</body>
-</html>  </section>
-
-  <section class="panel" aria-labelledby="results-title">
-    <h2 id="results-title" style="color:var(--accent);margin:0 0 8px">Önerilen Bedenler</h2>
-
-    <div class="summary" id="summary">Önce bilgileri girip "Bedenleri Göster"e tıklayın.</div>
-
-    <div class="cards" id="cards" aria-live="polite">
-      <div class="card" id="card-mont"><h3>Mont</h3><div class="val" id="montVal">-</div><div id="montNote" style="color:var(--muted);font-size:13px;margin-top:6px">—</div></div>
-      <div class="card" id="card-yelek"><h3>Yelek</h3><div class="val" id="yelekVal">-</div><div id="yelekNote" style="color:var(--muted);font-size:13px;margin-top:6px">—</div></div>
-      <div class="card" id="card-pardosu"><h3>Pardösü</h3><div class="val" id="pardosuVal">-</div><div id="pardosuNote" style="color:var(--muted);font-size:13px;margin-top:6px">—</div></div>
-      <div class="card" id="card-pantolon"><h3>Pantolon</h3><div class="val" id="pantolonVal">-</div><div id="pantolonNote" style="color:var(--muted);font-size:13px;margin-top:6px">—</div></div>
-      <div class="card" id="card-elbise"><h3>Elbise</h3><div class="val" id="elbiseVal">-</div><div id="elbiseNote" style="color:var(--muted);font-size:13px;margin-top:6px">—</div></div>
-      <div class="card" id="card-gomlek"><h3>Gömlek</h3><div class="val" id="gomlekVal">-</div><div id="gomlekNote" style="color:var(--muted);font-size:13px;margin-top:6px">—</div></div>
-    </div>
-
-    <div class="note" id="finalNote">Bu ekran ön öneri verir. Teslimatta kesin beden prova ile netleştirilir.</div>
-  </section>
-</main>
+  </body>
+  </html>
